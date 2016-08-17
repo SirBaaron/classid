@@ -80,4 +80,5 @@ and the output of classid-pairs may be:
 <br><br>
 <b>Notes:</b><br>
 °This script is very basic, if you look for something with more features, have a look at [Google Closure Stylesheets]("https://github.com/google/closure-stylesheets")<br>
-°Always have a backup of your files, as the script will change directly the source code!
+°Always have a backup of your files, as the script will change directly the source code!<br>
+°When having a couple of classes/ids in a js string, wrap each field individually, like so: `classid("someclass") + " " + classid("someid")`
