@@ -61,7 +61,7 @@ for fle in sys.argv[1:]:
 		splitter = extractor = '.+';
 		if (typ == "html"):
 			mask = ['(?<=class=")[^"]+', '(?<=id=")[^"]+'];
-			splitter = '\w+';
+			splitter = '[^ ]+';
 		if (typ == "js"):
 			mask = ['classid\("[^")]+"\)'];
 			extractor = '(?<=").[^"]+';
