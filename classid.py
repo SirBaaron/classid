@@ -74,10 +74,11 @@ for fle in sys.argv[1:]:
 				parts = re.finditer(splitter, match.group(0));
 				for classid in parts:
 					core = re.search(extractor, classid.group(0));
-					if core.group(0) in blacklist:
+					if (core.group(0) in blacklist) and (typ != "js"):
 						break;
-
-					if core.group(0) in values:
+					elif core.group(0) in blacklist:
+						replacewith = core.group(0);
+					elif core.group(0) in values:
 						replacewith = values.get(core.group(0));
 					else:
 						replacewith = alphabet;
