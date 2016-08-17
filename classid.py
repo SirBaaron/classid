@@ -3,6 +3,7 @@ import sys;
 import re;
 import json;
 import string;
+import codecs;
 
 
 print("Written by Aaron Längert\n");
@@ -50,10 +51,10 @@ for fle in sys.argv[1:]:
 	typ = str(fle.rsplit(".", 1)[-1]);
 	if (typ == "html") or (typ == "js") or (typ == "css"):
 		try:
-			file = open(fle, "r+");
+			file = codecs.open(fle, "r+", "utf-8");
 			content = file.read();
 		except:
-			print("Can't open file " + fle);
+			print("Can't open file " + fle + ": " + str(sys.exc_info()[0]));
 			break;
 		print("shortening " + fle + "..");
 
