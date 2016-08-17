@@ -86,6 +86,7 @@ for fle in sys.argv[1:]:
 
 					if typ == "js":
 						replacewith = "\"" + replacewith + "\"";
+						totalsave -= 9; #the chracters from classid() technically don't count
 
 					start = match.start(0) + classid.start(0) - sparing;
 					end = match.start(0) + classid.end(0) - sparing;
